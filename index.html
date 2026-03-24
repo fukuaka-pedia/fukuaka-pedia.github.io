@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>複垢界隈図鑑 | Fukuaka Pedia</title>
+  <link rel="icon" href="https://fukuaka-pedia.github.io/assets/img/icon.png">
+  <link rel="stylesheet" href="https://fukuaka-pedia.github.io/assets/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="site-header">
+  <a href="https://fukuaka-pedia.github.io/" class="logo">
+    <span class="ja">複垢界隈図鑑</span>
+    <span class="en">Fukuaka Pedia</span>
+  </a>
+
+  <form id="search-form" onsubmit="return false;">
+    <input type="text" id="search-input" name="q" placeholder="複垢・関連情報を検索…" autocomplete="off">
+    <button type="submit" id="search-btn" onclick="doSearch()">🔍</button>
+  </form>
+
+  <nav class="header-nav">
+    <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
+    <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
+    <a href="https://fukuaka-pedia.github.io/categories/">カテゴリ</a>
+    <a href="https://fukuaka-pedia.github.io/timeline/">年表</a>
+    <a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ===== LAYOUT ===== -->
+<div id="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">月間ランキング TOP5</div>
+      <ul class="sidebar-rank-list" id="sidebar-monthly-rank">
+        <!-- GASから動的取得。未設定時は以下の静的データを表示 -->
+        <li>
+          <span class="rank-num">1</span>
+          <img src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatohuki.png" alt="" onerror="this.style.visibility='hidden'">
+          <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/">日本鳩吹党</a>
+        </li>
+        <li>
+          <span class="rank-num">2</span>
+          <img src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="" onerror="this.style.visibility='hidden'">
+          <a href="https://fukuaka-pedia.github.io/related/複垢DM/">複垢DM</a>
+        </li>
+        <li class="rank-loading">（データ取得中…）</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">お気に入り</div>
+      <ul class="sidebar-fav-list" id="sidebar-favs"></ul>
+      <p class="fav-empty" id="fav-empty-msg">★ボタンでお気に入り登録できます</p>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">ナビゲーション</div>
+      <ul class="sidebar-nav-list">
+        <li><a href="https://fukuaka-pedia.github.io/">🏠 ホーム</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/accounts/">📋 複垢一覧</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/related/">🔗 関連情報</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/categories/">🏷️ カテゴリ</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/pages/">📄 ページ一覧</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/timeline/">📅 年表</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/history/">📝 追加履歴</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/ranking/">📊 アクセスランキング</a></li>
+        <li><a href="https://fukuaka-pedia.github.io/contact/">✉️ お問い合わせ</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <h1 class="page-title">複垢界隈図鑑へようこそ</h1>
+
+    <!-- 検索結果エリア（検索時のみ表示） -->
+    <div id="search-results">
+      <div id="search-results-header">
+        <span id="search-results-title">検索結果</span>
+        <button class="btn-close-search" onclick="closeSearch()" title="閉じる">✕</button>
+      </div>
+      <ul id="search-results-list"></ul>
+      <div id="search-no-results">該当するページが見つかりませんでした。</div>
+    </div>
+
+    <div class="intro-box">
+      <h2>複垢界隈図鑑（Fukuaka Pedia）とは</h2>
+      <p>
+        <strong>複垢界隈図鑑</strong>（ふくあかかいわいずかん、英: <em>Fukuaka Pedia</em>）は、Twitter（現X）で活動する複垢や、複垢に関連する情報をまとめた非公式のオープン情報サイトです。
+      </p>
+      <p>
+        <strong>複垢</strong>（ふくあか）とは、Twitter（現X）で複数人により運営されているアカウントを指す言葉で、「複数人アカウント」の略称です。一般的には「複数のアカウントを使い分けること」を指しますが、複垢界隈においては<strong>複数人で運営されているアカウント</strong>を意味します。
+      </p>
+      <p>
+        このサイトでは、各複垢の概要・活動履歴・関連情報などを記録・公開しています。掲載内容に誤りがある場合や、情報の追加・削除をご希望の方は<a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>ください。
+      </p>
+    </div>
+
+    <div class="notice">
+      ⚠️ このサイトに掲載されている情報は有志による収集・記録に基づくものです。情報の正確性・完全性を保証するものではありません。
+    </div>
+
+    <div class="quick-links">
+      <a href="https://fukuaka-pedia.github.io/accounts/">📋 複垢一覧</a>
+      <a href="https://fukuaka-pedia.github.io/ranking/">📊 ランキング</a>
+      <a href="https://fukuaka-pedia.github.io/categories/">🏷️ カテゴリ</a>
+      <a href="https://fukuaka-pedia.github.io/related/">🔗 関連情報</a>
+      <a href="https://fukuaka-pedia.github.io/timeline/">📅 年表</a>
+      <a href="https://fukuaka-pedia.github.io/history/">📝 追加履歴</a>
+      <a href="https://fukuaka-pedia.github.io/contact/">✉️ お問い合わせ</a>
+    </div>
+
+    <!-- サイト概要 -->
+    <h2 class="section-h2">サイト概要</h2>
+    <table class="info-table">
+      <tr><th>サイト名</th><td>複垢界隈図鑑</td></tr>
+      <tr><th>英語名</th><td>Fukuaka Pedia</td></tr>
+      <tr><th>対象</th><td>Twitter（現X）上の複垢界隈</td></tr>
+      <tr><th>掲載内容</th><td>複垢の詳細情報・関連情報・年表など</td></tr>
+      <tr><th>情報提供</th><td><a href="https://fukuaka-pedia.github.io/contact/">お問い合わせフォーム</a>より受け付けています</td></tr>
+    </table>
+
+    <!-- 注目の複垢 -->
+    <h2 class="section-h2">注目の複垢</h2>
+    <div class="card-grid">
+
+      <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="fukuaka-card">
+        <div class="card-img-wrap">
+          <img
+            src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatohuki.png"
+            alt="日本鳩吹党アイコン"
+            onerror="this.parentElement.innerHTML='<span class=&quot;img-placeholder&quot;>🐦</span>'"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-name">日本鳩吹党</div>
+          <div class="card-username">@hatohuki_jp</div>
+          <div class="card-desc">Twitter（現X）上で活動する政党系複垢。「鳩吹」をテーマとした政治的ロールプレイを行う。</div>
+        </div>
+      </a>
+
+      <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="fukuaka-card">
+        <div class="card-img-wrap">
+          <img
+            src="https://fukuaka-pedia.github.io/assets/img/icon.png"
+            alt="複垢DM"
+            onerror="this.parentElement.innerHTML='<span class=&quot;img-placeholder&quot;>💬</span>'"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-name">複垢DM</div>
+          <div class="card-username card-username--label">関連情報</div>
+          <div class="card-desc">複垢界隈内でのDM（ダイレクトメッセージ）に関する情報ページ。複垢間のやり取りや文化について解説。</div>
+        </div>
+      </a>
+
+      <a href="https://fukuaka-pedia.github.io/accounts/" class="fukuaka-card fukuaka-card--dashed">
+        <div class="card-img-wrap">
+          <span class="img-placeholder">＋</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name--muted">他の複垢を見る</div>
+          <div class="card-desc">複垢一覧ページで登録済みの複垢を確認できます。</div>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="https://fukuaka-pedia.github.io/accounts/" class="btn-more">複垢一覧 →</a>
+
+    <!-- 使い方 -->
+    <h2 class="section-h2">このサイトの使い方</h2>
+    <ul class="body-list">
+      <li>上部の検索バーから複垢名やユーザーネームで検索できます。</li>
+      <li>「複垢一覧」から登録されたすべての複垢を一覧で確認できます。</li>
+      <li>各複垢の詳細ページでは、アイコン・概要・活動履歴・関連情報などを確認できます。</li>
+      <li>詳細ページの ★ ボタンを押すとお気に入りに登録でき、左サイドバーから素早くアクセスできます。</li>
+      <li>「アクセスランキング」では、累計・年間・月間・週間・日間のアクセス数ランキングを確認できます。</li>
+      <li>情報の誤りや追加希望は<a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>または各ページの情報提供フォームからご連絡ください。</li>
+    </ul>
+
+    <!-- 関連情報 -->
+    <h2 class="section-h2">関連情報</h2>
+    <ul class="body-list">
+      <li><a href="https://fukuaka-pedia.github.io/related/複垢DM/">複垢DM</a> — 複垢界隈のDM文化について</li>
+      <li><a href="https://fukuaka-pedia.github.io/related/">関連情報一覧</a></li>
+    </ul>
+
+  </main>
+</div>
+
+<!--
+  =====================================================
+  検索インデックス管理: /assets/search-index.json
+  =====================================================
+  新しいページを追加する際は、このファイルにエントリを追記してください。
+
+  フォーマット:
+  [
+    {
+      "name": "ページ名（表示名）",
+      "url": "https://fukuaka-pedia.github.io/...",
+      "type": "複垢",          // 複垢 | 関連情報 | カテゴリ | ページ | その他
+      "username": "@xxxx",    // 複垢のユーザーネーム（複垢以外は空文字）
+      "icon": "https://fukuaka-pedia.github.io/assets/img/fukuaka/xxxx.png",
+      "tags": ["タグ1", "タグ2", "読み仮名など"],
+      "desc": "ページの概要テキスト（検索対象にもなります）"
+    }
+  ]
+
+  例:
+  {
+    "name": "日本鳩吹党",
+    "url": "https://fukuaka-pedia.github.io/accounts/日本鳩吹党/",
+    "type": "複垢",
+    "username": "@hatohuki_jp",
+    "icon": "https://fukuaka-pedia.github.io/assets/img/fukuaka/hatohuki.png",
+    "tags": ["日本鳩吹党", "にほんはとふきとう", "hatohuki", "鳩吹", "政党", "政治"],
+    "desc": "Twitter（現X）上で活動する政党系複垢。"
+  }
+-->
+
+<script>
+// =====================================================
+// 検索機能
+// 検索対象は /assets/search-index.json で一元管理
+// =====================================================
+
+const SEARCH_INDEX_URL = 'https://fukuaka-pedia.github.io/assets/search-index.json';
+
+// search-index.json が未設置の場合のフォールバック
+const FALLBACK_INDEX = [
+  {
+    name: "日本鳩吹党",
+    url: "https://fukuaka-pedia.github.io/accounts/日本鳩吹党/",
+    type: "複垢",
+    username: "@hatohuki_jp",
+    icon: "https://fukuaka-pedia.github.io/assets/img/fukuaka/hatohuki.png",
+    tags: ["日本鳩吹党", "にほんはとふきとう", "hatohuki", "鳩吹", "政党", "政治"],
+    desc: "Twitter（現X）上で活動する政党系複垢。「鳩吹」をテーマとした政治的ロールプレイを行う。"
+  },
+  {
+    name: "複垢DM",
+    url: "https://fukuaka-pedia.github.io/related/複垢DM/",
+    type: "関連情報",
+    username: "",
+    icon: "https://fukuaka-pedia.github.io/assets/img/icon.png",
+    tags: ["複垢DM", "ふくあかDM", "DM", "ダイレクトメッセージ"],
+    desc: "複垢界隈内でのDM（ダイレクトメッセージ）に関する情報ページ。"
+  }
+];
+
+let searchIndex = null;
+
+async function loadSearchIndex() {
+  if (searchIndex) return searchIndex;
+  try {
+    const res = await fetch(SEARCH_INDEX_URL);
+    if (!res.ok) throw new Error();
+    searchIndex = await res.json();
+  } catch {
+    searchIndex = FALLBACK_INDEX;
+  }
+  return searchIndex;
+}
+
+async function doSearch() {
+  const q = document.getElementById('search-input').value.trim();
+  if (!q) return;
+
+  const index = await loadSearchIndex();
+  const qLower = q.toLowerCase();
+
+  const results = index.filter(item => {
+    const haystack = [
+      item.name || '',
+      item.username || '',
+      item.desc || '',
+      ...(item.tags || [])
+    ].join(' ').toLowerCase();
+    return haystack.includes(qLower);
+  });
+
+  renderSearchResults(q, results);
+}
+
+function renderSearchResults(query, results) {
+  const container = document.getElementById('search-results');
+  const title = document.getElementById('search-results-title');
+  const list = document.getElementById('search-results-list');
+  const noResult = document.getElementById('search-no-results');
+
+  title.textContent = `「${query}」の検索結果（${results.length}件）`;
+  list.innerHTML = '';
+  noResult.style.display = 'none';
+
+  if (results.length === 0) {
+    noResult.style.display = '';
+  } else {
+    results.forEach(item => {
+      const li = document.createElement('li');
+      const iconUrl = item.icon || 'https://fukuaka-pedia.github.io/assets/img/icon.png';
+      li.innerHTML = `
+        <img src="${iconUrl}" alt="" onerror="this.style.visibility='hidden'">
+        <div class="res-info">
+          <a class="res-name" href="${item.url}">${item.name}</a>
+          ${item.username ? `<div class="res-meta">${item.username}</div>` : ''}
+          ${item.desc ? `<div class="res-desc">${item.desc}</div>` : ''}
+        </div>
+        <span class="res-type">${item.type || 'ページ'}</span>
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  container.classList.add('active');
+  container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeSearch() {
+  document.getElementById('search-results').classList.remove('active');
+  document.getElementById('search-input').value = '';
+}
+
+document.getElementById('search-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doSearch();
+  if (e.key === 'Escape') closeSearch();
+});
+
+// =====================================================
+// お気に入り（localStorage）
+// =====================================================
+function loadFavorites() {
+  const favs = JSON.parse(localStorage.getItem('fukuaka_favs') || '[]');
+  const list = document.getElementById('sidebar-favs');
+  const emptyMsg = document.getElementById('fav-empty-msg');
+  list.innerHTML = '';
+  if (favs.length === 0) {
+    emptyMsg.style.display = '';
+    return;
+  }
+  emptyMsg.style.display = 'none';
+  favs.forEach(fav => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <img src="${fav.icon || ''}" alt="" onerror="this.style.visibility='hidden'">
+      <a href="${fav.url}">${fav.name}</a>
+    `;
+    list.appendChild(li);
+  });
+}
+loadFavorites();
+
+// =====================================================
+// GAS連携（ランキング取得 & ページビュー記録）
+// GAS_URL に実際のデプロイURLを設定してください
+// =====================================================
+const GAS_URL = 'https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec';
+
+async function loadSidebarRanking() {
+  try {
+    const res = await fetch(`${GAS_URL}?action=ranking&period=monthly&limit=5`);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data || !data.ranking) return;
+    const list = document.getElementById('sidebar-monthly-rank');
+    list.innerHTML = '';
+    data.ranking.forEach((item, i) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="rank-num">${i + 1}</span>
+        <img src="${item.icon || 'https://fukuaka-pedia.github.io/assets/img/icon.png'}" alt="" onerror="this.style.visibility='hidden'">
+        <a href="${item.url}">${item.name}</a>
+      `;
+      list.appendChild(li);
+    });
+  } catch (e) { /* GAS未設定時はフォールバック静的データを維持 */ }
+}
+
+async function recordPageView() {
+  try {
+    await fetch(
+      `${GAS_URL}?action=pageview&page=${encodeURIComponent(location.href)}&title=${encodeURIComponent(document.title)}`,
+      { method: 'GET', mode: 'no-cors' }
+    );
+  } catch (e) {}
+}
+
+if (!GAS_URL.includes('YOUR_GAS')) {
+  loadSidebarRanking();
+  recordPageView();
+}
+</script>
+
+</body>
+</html>
