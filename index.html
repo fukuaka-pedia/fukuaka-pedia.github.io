@@ -19,35 +19,21 @@
   <link rel="icon" type="image/png" href="https://fukuaka-pedia.github.io/assets/img/icon.png">
 </head>
 <body>
-
-<!-- ============================================================
-  HEADER（全ページ共通）
-  ============================================================ -->
 <header class="site-header">
   <a href="https://fukuaka-pedia.github.io/" class="site-header__brand">
     <span class="site-header__title-ja">複垢界隈図鑑</span>
     <span class="site-header__title-en">Fukuaka Pedia</span>
   </a>
-
   <div class="site-header__search">
     <input type="text" id="globalSearch" placeholder="記事を検索…" autocomplete="off">
     <button onclick="doSearch()">検索</button>
   </div>
-
   <nav class="site-header__nav">
     <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
     <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
   </nav>
 </header>
-
-<!-- ============================================================
-  LAYOUT WRAPPER
-  ============================================================ -->
 <div class="layout">
-
-  <!-- ============================================================
-    SIDEBAR（全ページ共通）
-    ============================================================ -->
   <aside class="sidebar">
     <div class="sidebar__section">
       <div class="sidebar__heading">月間ランキング TOP5</div>
@@ -85,35 +71,24 @@
         </li>
       </ul>
     </div>
-
     <div class="sidebar__section">
       <div class="sidebar__heading">お気に入り</div>
       <ul class="sidebar__list" id="sidebarFavorites">
-        <!-- LocalStorageから動的に挿入 -->
         <li id="favEmptyMsg" style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">お気に入りはまだありません</li>
       </ul>
     </div>
   </aside>
-
-  <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
   <main class="main-content">
-
-    <!-- ============================================================
-      [PAGE: index.html] — ホームページ
-      ============================================================ -->
     <section id="page-home" class="page-section">
       <div class="content-area">
         <div class="page-header">
           <h1 class="page-header__title">複垢界隈図鑑へようこそ</h1>
-          <p class="page-header__sub">Twitter（X）における「複垢界隈」の情報を集めた百科事典</p>
+          <p class="page-header__sub">Twitterの「複垢界隈」の情報を掲載する図鑑サイト</p>
         </div>
-
         <div class="home-intro">
           <p>
             <strong>複垢界隈図鑑</strong>（ふくあかかいわいずかん、英: <em>Fukuaka Pedia</em>）は、
-            Twitter（現X）において活動する「複垢界隈」——複数アカウントを使い分けながら活動する個人・集団——に関する情報を収集・整理した百科事典型ウェブサイトです。
+            Twitterで活動する「複垢」に関する情報を収集・整理した図鑑サイトです。
           </p>
           <p>
             本サイトは有志によって運営されており、掲載情報は順次更新されます。
@@ -121,53 +96,63 @@
             <a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>よりご連絡ください。
           </p>
           <p>
-            複垢界隈とは、Twitterにおいて複数のアカウントを持ち活動する人々が集まるコミュニティの総称です。
-            政治的主張や創作活動、情報発信など、様々な目的のもとで形成されています。
+            複垢界隈とは、Twitterで複数人で運営・管理されるアカウントのコミュニティです。
+            政治的主張や情報発信など、様々な目的のもとで形成されています。
           </p>
         </div>
-
         <div class="notice notice--info">
-          ℹ️ 本サイトに掲載されている情報は記録・研究目的のものです。特定の思想・立場を支持・批判するものではありません。
+          本サイトに掲載されている情報は記録目的のものです。特定の思想・立場を支持・批判するものではありません。
         </div>
-
         <h2 class="home-section-title">主な複垢</h2>
         <div class="home-cards">
-          <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="account-card">
-            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-            <div class="account-card__name">日本鳩吹党</div>
-            <div class="account-card__username">@nihon_hatobukito</div>
+          <a href="https://fukuaka-pedia.github.io/accounts/SLA@再建/" class="account-card">
+            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/SLA@再建.png" alt="SLA@再建" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+            <div class="account-card__name">SLA@再建</div>
+            <div class="account-card__username">@2ndSLA0817</div>
           </a>
-          <!-- 他の複垢カードはここに追加 -->
+          <a href="https://fukuaka-pedia.github.io/accounts/啓蒙と非バイアス社会の同盟/" class="account-card">
+            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/LENS.png" alt="啓蒙と非バイアス社会の同盟" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+            <div class="account-card__name">啓蒙と非バイアス社会の同盟</div>
+            <div class="account-card__username">@LENS_Project26</div>
+          </a>
+          <a href="https://fukuaka-pedia.github.io/accounts/日本結束主義評議会/" class="account-card">
+            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/CFG.png" alt="日本結束主義評議会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+            <div class="account-card__name">日本結束主義評議会</div>
+            <div class="account-card__username">@CFd_Giappone</div>
+          </a>
+          <a href="https://fukuaka-pedia.github.io/accounts/日本革命委員会/" class="account-card">
+            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/RCJ.png" alt="日本革命委員会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+            <div class="account-card__name">日本革命委員会</div>
+            <div class="account-card__username">@rcj_united</div>
+          </a>
         </div>
-
         <h2 class="home-section-title">関連情報</h2>
         <div class="home-cards">
-          <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="account-card">
-            <div class="account-card__name">複垢DM</div>
+          <a href="https://fukuaka-pedia.github.io/related/複垢/" class="account-card">
+            <div class="account-card__name">複垢</div>
+            <div class="account-card__username">関連情報</div>
+          </a>
+          <a href="https://fukuaka-pedia.github.io/related/複垢界隈/" class="account-card">
+            <div class="account-card__name">複垢界隈</div>
             <div class="account-card__username">関連情報</div>
           </a>
         </div>
-
         <h2 class="home-section-title">サイトについて</h2>
         <div class="section-box">
           <div class="section-box__title">ナビゲーション</div>
           <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.3rem;">
-            <li><a href="https://fukuaka-pedia.github.io/accounts/">📋 複垢一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/ranking/">📊 アクセスランキング</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/history/">📝 追加履歴</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/categories/">🏷️ カテゴリ一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/pages/">📄 ページ一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/timeline/">📅 年表</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/related/">🔗 関連情報</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/contact/">✉️ お問い合わせ</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/history/">追加履歴</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/categories/">カテゴリ一覧</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/pages/">ページ一覧</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/timeline/">年表</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/related/">関連情報</a></li>
+            <li><a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a></li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-      [PAGE: history/index.html] — 追加履歴
-      ============================================================ -->
     <section id="page-history" class="page-section hidden">
       <div class="content-area">
         <nav class="breadcrumb">
@@ -179,7 +164,6 @@
           <h1 class="page-header__title">追加履歴</h1>
           <p class="page-header__sub">ページが追加・更新された履歴の一覧</p>
         </div>
-
         <div class="history-filter">
           <select class="form-control" style="width:auto;" id="histFilterType">
             <option value="">すべての種別</option>
@@ -188,8 +172,6 @@
           </select>
           <input type="text" class="form-control" style="width:auto;" id="histFilterKeyword" placeholder="キーワード検索…">
         </div>
-
-        <!-- GASから取得して挿入するエリア -->
         <div id="historyContainer">
           <div class="history-full-item">
             <div class="history-full-item__header">
