@@ -57,8 +57,8 @@
   --color-rank-silver: #8a9aaa;
   --color-rank-bronze: #9a6b4a;
 
-  --font-sans: 'Zen Kaku Gothic New', sans-serif;
-  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
   --font-mono: 'Source Code Pro', monospace;
 
   --radius-sm: 4px;
@@ -131,25 +131,12 @@ img {
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
-.site-header__logo {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
 .site-header__brand {
-  display: flex;
-  line-height: 1.15;
-  white-space: nowrap;
-  text-decoration: none;
-  gap: 0.6rem;
-}
-
-.site-header__brand > div {
   display: flex;
   flex-direction: column;
   line-height: 1.15;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .site-header__title-ja {
@@ -347,7 +334,6 @@ img {
   margin: 0 auto;
 }
 
-/* --- Page Header --- */
 .page-header {
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
@@ -522,7 +508,6 @@ img {
   align-items: start;
 }
 
-/* Infobox */
 .infobox {
   background: var(--color-infobox-bg);
   border: 1px solid var(--color-infobox-border);
@@ -864,7 +849,6 @@ img {
   font-size: 0.9rem;
 }
 
-/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -916,7 +900,6 @@ img {
   margin: 0.5rem 0;
 }
 
-/* Section box */
 .section-box {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -935,7 +918,6 @@ img {
   border-bottom: 1px solid var(--color-border-light);
 }
 
-/* Related links */
 .related-links {
   display: flex;
   flex-direction: column;
@@ -1268,7 +1250,6 @@ img {
   margin-top: 1rem;
 }
 
-/* Checkbox / Radio */
 .form-check {
   display: flex;
   align-items: flex-start;
@@ -1748,9 +1729,137 @@ img {
 .items-center { align-items: center; }
 .hidden { display: none !important; }
 
-/* Divider */
 .divider {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 1rem 0;
+}
+
+.site-header__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.site-header__brand > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.ranking-loading,
+.ranking-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.1em 0.55em;
+  border-radius: var(--radius-full);
+  vertical-align: middle;
+  margin-left: 0.35em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.status-badge--active {
+  background: #e6f4ec;
+  color: #2e7d4f;
+  border-color: #a8d8b8;
+}
+
+.status-badge--hiatus {
+  background: #faf3e0;
+  color: #8a6820;
+  border-color: #e8d48a;
+}
+
+.status-badge--ended {
+  background: #f5eded;
+  color: #8a3a3a;
+  border-color: #d8aaaa;
+}
+
+.status-badge--unknown {
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.account-card .status-badge,
+.account-list-item .status-badge {
+  display: block;
+  margin: 0.3rem auto 0;
+  width: fit-content;
+}
+
+.pages-table td:first-child,
+.pages-table th:first-child {
+  display: none;
+}
+
+.file-upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.file-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.9rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  user-select: none;
+}
+
+.file-upload-label::before {
+  content: '📎';
+  font-size: 0.9rem;
+}
+
+.file-upload-label:hover {
+  background: var(--color-bg-alt);
+  border-color: var(--color-primary-border);
+}
+
+.file-upload-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.file-upload-name {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
