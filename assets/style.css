@@ -1635,6 +1635,11 @@ img {
   display: block;
 }
 
+.pages-table__icon img,
+.list-table__icon img {
+  height: 100%;
+}
+
 @media (max-width: 900px) {
   :root {
     --sidebar-width: 200px;
