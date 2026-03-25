@@ -1590,37 +1590,43 @@ img {
   margin-top: 0.15rem;
 }
 
-.pages-table, .list-table {
+.pages-table,
+.list-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.86rem;
 }
 
-.pages-table th, .list-table th {
+.pages-table th,
+.list-table th {
   background: var(--color-table-header);
   font-weight: 700;
   padding: 0.45rem 0.7rem;
   border: 1px solid var(--color-border);
   text-align: left;
-  position: sticky;
+  position: static;
   top: var(--header-height);
 }
 
-.pages-table td, .list-table td {
+.pages-table td,
+.list-table td {
   padding: 0.4rem 0.7rem;
   border: 1px solid var(--color-border-light);
   vertical-align: middle;
 }
 
-.pages-table tr:nth-child(even) td, .list-table tr:nth-child(even) td {
+.pages-table tr:nth-child(even) td,
+.list-table tr:nth-child(even) td {
   background: var(--color-table-stripe);
 }
 
-.pages-table tr:hover td, .list-table tr:hover td {
+.pages-table tr:hover td,
+.list-table tr:hover td {
   background: var(--color-primary-light);
 }
 
-.pages-table__icon, list-table__icon {
+.pages-table__icon,
+.list-table__icon {
   width: 28px;
   height: 28px;
   border-radius: 50%;
