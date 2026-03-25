@@ -1,0 +1,60 @@
+    <section id="page-contact" class="page-section hidden">
+      <div class="content-area">
+        <nav class="breadcrumb">
+          <a href="https://fukuaka-pedia.github.io/">ホーム</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>お問い合わせ</span>
+        </nav>
+        <div class="page-header">
+          <h1 class="page-header__title">お問い合わせ</h1>
+          <p class="page-header__sub">サイト全体に関するお問い合わせはこちら</p>
+        </div>
+
+        <div class="form-card">
+          <form id="contactFormSite">
+            <div class="form-group">
+              <label class="form-label">問い合わせ種別<span class="form-required">*</span></label>
+              <select name="inquiry_type" class="form-control form-control--select" required>
+                <option value="">選択してください</option>
+                <option value="error">情報の間違い</option>
+                <option value="question">サイトに関する質問</option>
+                <option value="request">掲載依頼</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">件名<span class="form-optional">（任意）</span></label>
+              <input type="text" name="subject" class="form-control" placeholder="件名を入力してください">
+            </div>
+
+            <hr class="divider">
+            <p class="text-sm text-sub" style="margin-bottom:0.75rem;">
+              以下は<strong>Twitterのユーザーネームまたはメールアドレスのいずれか</strong>が必須です。
+            </p>
+            <div class="form-group">
+              <label class="form-label">Twitterユーザーネーム<span class="form-optional">（いずれか必須）</span></label>
+              <input type="text" name="contact_twitter" class="form-control" placeholder="@yourusername">
+            </div>
+            <div class="form-group">
+              <label class="form-label">メールアドレス<span class="form-optional">（いずれか必須）</span></label>
+              <input type="email" name="contact_email" class="form-control" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">内容<span class="form-optional">（任意）</span></label>
+              <textarea name="content" class="form-control form-control--textarea" rows="6" placeholder="お問い合わせ内容を入力してください"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ファイル添付<span class="form-optional">（任意）</span></label>
+              <input type="file" name="attachment" class="form-control" accept="image/*,.pdf,.txt">
+              <div class="form-hint">画像・PDF・テキストのみ対応。5MB以内。</div>
+            </div>
+            <div class="form-submit">
+              <button type="button" class="btn btn--primary" onclick="submitSiteContact()">送信する</button>
+            </div>
+            <div class="form-success" id="successSiteContact">
+              ✅ お問い合わせを受け付けました。ありがとうございます。
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
