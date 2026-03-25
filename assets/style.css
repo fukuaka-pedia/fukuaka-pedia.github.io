@@ -142,12 +142,14 @@ img {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  text-decoration: none;
 }
 
 .site-header__brand > div {
   display: flex;
   flex-direction: column;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .site-header__title-ja {
@@ -1744,28 +1746,6 @@ img {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 1rem 0;
-}
-
-.site-header__logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.site-header__brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}
-
-.site-header__brand > div {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  white-space: nowrap;
 }
 
 .ranking-loading,
