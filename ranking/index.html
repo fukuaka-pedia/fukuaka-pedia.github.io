@@ -1,0 +1,115 @@
+    <section id="page-ranking" class="page-section hidden">
+      <div class="content-area">
+        <nav class="breadcrumb">
+          <a href="https://fukuaka-pedia.github.io/">ホーム</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>アクセスランキング</span>
+        </nav>
+        <div class="page-header">
+          <h1 class="page-header__title">アクセスランキング</h1>
+          <p class="page-header__sub">複垢および関連情報のページのみが対象です</p>
+        </div>
+        <div class="ranking-tabs" role="tablist">
+          <button class="ranking-tab active" onclick="switchRankTab(this,'rank-total')" role="tab">累計</button>
+          <button class="ranking-tab" onclick="switchRankTab(this,'rank-year')" role="tab">年間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this,'rank-month')" role="tab">月間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this,'rank-week')" role="tab">週間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this,'rank-day')" role="tab">日間</button>
+        </div>
+        <div id="rank-total" class="ranking-panel active">
+          <div class="ranking-list" id="rankListTotal">
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
+              <span class="ranking-item__rank rank-1">1</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">日本鳩吹党</div>
+                <div class="ranking-item__type">複垢</div>
+              </div>
+              <span class="ranking-item__count">1,234 PV</span>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
+              <span class="ranking-item__rank rank-2">2</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">複垢DM</div>
+                <div class="ranking-item__type">関連情報</div>
+              </div>
+              <span class="ranking-item__count">876 PV</span>
+            </a>
+          </div>
+        </div>
+        <div id="rank-year" class="ranking-panel">
+          <div class="ranking-list" id="rankListYear">
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
+              <span class="ranking-item__rank rank-1">1</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">日本鳩吹党</div>
+                <div class="ranking-item__type">複垢</div>
+              </div>
+              <span class="ranking-item__count">980 PV</span>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
+              <span class="ranking-item__rank rank-2">2</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">複垢DM</div>
+                <div class="ranking-item__type">関連情報</div>
+              </div>
+              <span class="ranking-item__count">654 PV</span>
+            </a>
+          </div>
+        </div>
+        <div id="rank-month" class="ranking-panel">
+          <div class="ranking-list" id="rankListMonth">
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
+              <span class="ranking-item__rank rank-1">1</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">日本鳩吹党</div>
+                <div class="ranking-item__type">複垢</div>
+              </div>
+              <span class="ranking-item__count">245 PV</span>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
+              <span class="ranking-item__rank rank-2">2</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">複垢DM</div>
+                <div class="ranking-item__type">関連情報</div>
+              </div>
+              <span class="ranking-item__count">180 PV</span>
+            </a>
+          </div>
+        </div>
+        <div id="rank-week" class="ranking-panel">
+          <div class="ranking-list" id="rankListWeek">
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
+              <span class="ranking-item__rank rank-1">1</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">日本鳩吹党</div>
+                <div class="ranking-item__type">複垢</div>
+              </div>
+              <span class="ranking-item__count">58 PV</span>
+            </a>
+          </div>
+        </div>
+        <div id="rank-day" class="ranking-panel">
+          <div class="ranking-list" id="rankListDay">
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
+              <span class="ranking-item__rank rank-1">1</span>
+              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="ranking-item__info">
+                <div class="ranking-item__name">日本鳩吹党</div>
+                <div class="ranking-item__type">複垢</div>
+              </div>
+              <span class="ranking-item__count">12 PV</span>
+            </a>
+          </div>
+        </div>
+        <div class="notice notice--info mt-2">
+          アクセス数は自動集計されます。集計の都合上、数時間の遅延が生じる場合があります。
+        </div>
+      </div>
+    </section>
