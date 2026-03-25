@@ -1627,17 +1627,10 @@ img {
 .pages-table__icon,
 .list-table__icon {
   width: 28px;
-  height: 28px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
   display: block;
-}
-
-.pages-table__icon img,
-.list-table__icon img {
-  height: 100%;
 }
 
 @media (max-width: 900px) {
