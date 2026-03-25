@@ -1,0 +1,34 @@
+[
+  {
+    "name":     "日本鳩吹党",
+    "url":      "https://fukuaka-pedia.github.io/accounts/日本鳩吹党/",
+    "icon":     "NHP.png",
+    "type":     "複垢",
+    "status":   "活動中",
+    "summary":  "2025年3月6日からTwitterで活動している複垢。",
+    "keywords": [
+      "NHP",
+      "はとぶき",
+      "鳩吹"
+    ]
+  },
+  {
+    "name":     "複垢DM",
+    "url":      "https://fukuaka-pedia.github.io/related/複垢DM/",
+    "icon":     "icon.png",
+    "type":     "関連情報",
+    "status":   "",
+    "summary":  "複垢が参加しているDMグループ。",
+    "keywords": [
+      "DM",
+      "ダイレクトメッセージ",
+      "複垢",
+      "首長",
+      "再掲",
+      "家族",
+      "政治",
+      "ノスタルジア",
+      "フロンティア"
+    ]
+  }
+]
