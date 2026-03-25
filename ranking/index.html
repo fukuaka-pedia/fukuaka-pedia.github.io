@@ -1,4 +1,54 @@
-    <section id="page-ranking" class="page-section hidden">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="複垢界隈図鑑のアクセスランキング。累計・年間・月間・週間・日間で表示。">
+  <meta property="og:title" content="アクセスランキング — 複垢界隈図鑑">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="複垢界隈図鑑">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://fukuaka-pedia.github.io/assets/img/icon.png">
+  <title>アクセスランキング — 複垢界隈図鑑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fukuaka-pedia.github.io/assets/style.css">
+  <link rel="icon" type="image/png" href="https://fukuaka-pedia.github.io/assets/img/icon.png">
+</head>
+<body>
+  <header class="site-header">
+    <a href="https://fukuaka-pedia.github.io/" class="site-header__brand">
+      <img src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢界隈図鑑" class="site-header__logo">
+      <div>
+        <span class="site-header__title-ja">複垢界隈図鑑</span>
+        <span class="site-header__title-en">Fukuaka Pedia</span>
+      </div>
+    </a>
+    <div class="site-header__search">
+      <input type="text" id="globalSearch" placeholder="記事を検索…" autocomplete="off">
+      <button onclick="doSearch()">検索</button>
+    </div>
+    <nav class="site-header__nav">
+      <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
+      <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__section">
+        <div class="sidebar__heading">月間ランキング TOP5</div>
+          <ul class="sidebar__list" id="sidebarRanking">
+          <li style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">読み込み中…</li>
+        </ul>
+      </div>
+      <div class="sidebar__section">
+        <div class="sidebar__heading">お気に入り</div>
+        <ul class="sidebar__list" id="sidebarFavorites">
+          <li id="favEmptyMsg" style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">お気に入りはまだありません</li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main-content">
       <div class="content-area">
         <nav class="breadcrumb">
           <a href="https://fukuaka-pedia.github.io/">ホーム</a>
@@ -7,109 +57,49 @@
         </nav>
         <div class="page-header">
           <h1 class="page-header__title">アクセスランキング</h1>
-          <p class="page-header__sub">複垢および関連情報のページのみが対象です</p>
+          <p class="page-header__sub">複垢および関連情報のページが対象です</p>
         </div>
         <div class="ranking-tabs" role="tablist">
-          <button class="ranking-tab active" onclick="switchRankTab(this,'rank-total')" role="tab">累計</button>
-          <button class="ranking-tab" onclick="switchRankTab(this,'rank-year')" role="tab">年間</button>
-          <button class="ranking-tab" onclick="switchRankTab(this,'rank-month')" role="tab">月間</button>
-          <button class="ranking-tab" onclick="switchRankTab(this,'rank-week')" role="tab">週間</button>
-          <button class="ranking-tab" onclick="switchRankTab(this,'rank-day')" role="tab">日間</button>
+          <button class="ranking-tab active" onclick="switchRankTab(this, 'rank-total')" role="tab" aria-selected="true">累計</button>
+          <button class="ranking-tab" onclick="switchRankTab(this, 'rank-year')"  role="tab" aria-selected="false">年間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this, 'rank-month')" role="tab" aria-selected="false">月間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this, 'rank-week')"  role="tab" aria-selected="false">週間</button>
+          <button class="ranking-tab" onclick="switchRankTab(this, 'rank-day')"   role="tab" aria-selected="false">日間</button>
         </div>
         <div id="rank-total" class="ranking-panel active">
-          <div class="ranking-list" id="rankListTotal">
-            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
-              <span class="ranking-item__rank rank-1">1</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">日本鳩吹党</div>
-                <div class="ranking-item__type">複垢</div>
-              </div>
-              <span class="ranking-item__count">1,234 PV</span>
-            </a>
-            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
-              <span class="ranking-item__rank rank-2">2</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">複垢DM</div>
-                <div class="ranking-item__type">関連情報</div>
-              </div>
-              <span class="ranking-item__count">876 PV</span>
-            </a>
+          <div class="ranking-list" id="rankList-total">
+            <p class="ranking-loading">読み込み中…</p>
           </div>
         </div>
         <div id="rank-year" class="ranking-panel">
-          <div class="ranking-list" id="rankListYear">
-            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
-              <span class="ranking-item__rank rank-1">1</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">日本鳩吹党</div>
-                <div class="ranking-item__type">複垢</div>
-              </div>
-              <span class="ranking-item__count">980 PV</span>
-            </a>
-            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
-              <span class="ranking-item__rank rank-2">2</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">複垢DM</div>
-                <div class="ranking-item__type">関連情報</div>
-              </div>
-              <span class="ranking-item__count">654 PV</span>
-            </a>
+          <div class="ranking-list" id="rankList-year">
+            <p class="ranking-loading">読み込み中…</p>
           </div>
         </div>
         <div id="rank-month" class="ranking-panel">
-          <div class="ranking-list" id="rankListMonth">
-            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
-              <span class="ranking-item__rank rank-1">1</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">日本鳩吹党</div>
-                <div class="ranking-item__type">複垢</div>
-              </div>
-              <span class="ranking-item__count">245 PV</span>
-            </a>
-            <a href="https://fukuaka-pedia.github.io/related/複垢DM/" class="ranking-item">
-              <span class="ranking-item__rank rank-2">2</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢DM">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">複垢DM</div>
-                <div class="ranking-item__type">関連情報</div>
-              </div>
-              <span class="ranking-item__count">180 PV</span>
-            </a>
+          <div class="ranking-list" id="rankList-month">
+            <p class="ranking-loading">読み込み中…</p>
           </div>
         </div>
         <div id="rank-week" class="ranking-panel">
-          <div class="ranking-list" id="rankListWeek">
-            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
-              <span class="ranking-item__rank rank-1">1</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">日本鳩吹党</div>
-                <div class="ranking-item__type">複垢</div>
-              </div>
-              <span class="ranking-item__count">58 PV</span>
-            </a>
+          <div class="ranking-list" id="rankList-week">
+            <p class="ranking-loading">読み込み中…</p>
           </div>
         </div>
         <div id="rank-day" class="ranking-panel">
-          <div class="ranking-list" id="rankListDay">
-            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/" class="ranking-item">
-              <span class="ranking-item__rank rank-1">1</span>
-              <img class="ranking-item__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/hatobuki.png" alt="日本鳩吹党" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-              <div class="ranking-item__info">
-                <div class="ranking-item__name">日本鳩吹党</div>
-                <div class="ranking-item__type">複垢</div>
-              </div>
-              <span class="ranking-item__count">12 PV</span>
-            </a>
+          <div class="ranking-list" id="rankList-day">
+            <p class="ranking-loading">読み込み中…</p>
           </div>
         </div>
-        <div class="notice notice--info mt-2">
-          アクセス数は自動集計されます。集計の都合上、数時間の遅延が生じる場合があります。
+        <div class="notice notice--info" style="margin-top:1.5rem;">
+          アクセス数はプログラムにより自動集計されます。集計の都合上、数時間の遅延が生じる場合があります。
         </div>
       </div>
-    </section>
+    </main>
+  </div>
+  <script src="https://fukuaka-pedia.github.io/assets/common.js"></script>
+  <script>
+    fetchRankingData();
+  </script>
+</body>
+</html>
