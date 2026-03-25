@@ -1804,11 +1804,6 @@ img {
   width: fit-content;
 }
 
-.pages-table td:first-child,
-.pages-table th:first-child {
-  display: none;
-}
-
 .file-upload-input {
   position: absolute;
   width: 1px;
