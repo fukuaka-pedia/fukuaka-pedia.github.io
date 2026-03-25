@@ -19,443 +19,141 @@
   <link rel="icon" type="image/png" href="https://fukuaka-pedia.github.io/assets/img/icon.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="https://fukuaka-pedia.github.io/" class="site-header__brand">
-    <span class="site-header__title-ja">複垢界隈図鑑</span>
-    <span class="site-header__title-en">Fukuaka Pedia</span>
-  </a>
-  <div class="site-header__search">
-    <input type="text" id="globalSearch" placeholder="記事を検索…" autocomplete="off">
-    <button onclick="doSearch()">検索</button>
-  </div>
-  <nav class="site-header__nav">
-    <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
-    <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
-  </nav>
-</header>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="sidebar__section">
-      <div class="sidebar__heading">月間ランキング TOP5</div>
-      <ul class="sidebar__list" id="sidebarRanking">
-        <li>
-          <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/">
-            <span class="sidebar__rank-num gold">1</span>
-            <img class="sidebar__icon-sm" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/NHP.png" alt="日本鳩吹党" onerror="this.style.display='none'">
-            日本鳩吹党
-          </a>
-        </li>
-        <li>
-          <a href="https://fukuaka-pedia.github.io/related/複垢DM/">
-            <span class="sidebar__rank-num silver">2</span>
-            複垢DM
-          </a>
-        </li>
-        <li>
-          <a href="https://fukuaka-pedia.github.io/accounts/">
-            <span class="sidebar__rank-num bronze">3</span>
-            複垢一覧
-          </a>
-        </li>
-        <li>
-          <a href="https://fukuaka-pedia.github.io/timeline/">
-            <span class="sidebar__rank-num">4</span>
-            年表
-          </a>
-        </li>
-        <li>
-          <a href="https://fukuaka-pedia.github.io/categories/">
-            <span class="sidebar__rank-num">5</span>
-            カテゴリ一覧
-          </a>
-        </li>
-      </ul>
+  <header class="site-header">
+    <a href="https://fukuaka-pedia.github.io/" class="site-header__brand">
+      <span class="site-header__title-ja">複垢界隈図鑑</span>
+      <span class="site-header__title-en">Fukuaka Pedia</span>
+    </a>
+    <div class="site-header__search">
+      <input type="text" id="globalSearch" placeholder="記事を検索…" autocomplete="off">
+      <button onclick="doSearch()">検索</button>
     </div>
-    <div class="sidebar__section">
-      <div class="sidebar__heading">お気に入り</div>
-      <ul class="sidebar__list" id="sidebarFavorites">
-        <li id="favEmptyMsg" style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">お気に入りはまだありません</li>
-      </ul>
-    </div>
-  </aside>
-  <main class="main-content">
-    <section id="page-home" class="page-section">
-      <div class="content-area">
-        <div class="page-header">
-          <h1 class="page-header__title">複垢界隈図鑑へようこそ</h1>
-          <p class="page-header__sub">Twitterの「複垢界隈」の情報を掲載する図鑑サイト</p>
-        </div>
-        <div class="home-intro">
-          <p>
-            <strong>複垢界隈図鑑</strong>（ふくあかかいわいずかん、英: <em>Fukuaka Pedia</em>）は、
-            Twitterで活動する「複垢」に関する情報を収集・整理した図鑑サイトです。
-          </p>
-          <p>
-            本サイトは有志によって運営されており、掲載情報は順次更新されます。
-            情報の誤りや追加すべき事項がある場合は、各ページの「情報提供」または
-            <a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>よりご連絡ください。
-          </p>
-          <p>
-            複垢界隈とは、Twitterで複数人で運営・管理されるアカウントのコミュニティです。
-            政治的主張や情報発信など、様々な目的のもとで形成されています。
-          </p>
-        </div>
-        <div class="notice notice--info">
-          本サイトに掲載されている情報は記録目的のものです。特定の思想・立場を支持・批判するものではありません。
-        </div>
-        <h2 class="home-section-title">主な複垢</h2>
-        <div class="home-cards">
-          <a href="https://fukuaka-pedia.github.io/accounts/SLA@再建/" class="account-card">
-            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/SLA@再建.png" alt="SLA@再建" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-            <div class="account-card__name">SLA@再建</div>
-            <div class="account-card__username">@2ndSLA0817</div>
-          </a>
-          <a href="https://fukuaka-pedia.github.io/accounts/啓蒙と非バイアス社会の同盟/" class="account-card">
-            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/LENS.png" alt="啓蒙と非バイアス社会の同盟" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-            <div class="account-card__name">啓蒙と非バイアス社会の同盟</div>
-            <div class="account-card__username">@LENS_Project26</div>
-          </a>
-          <a href="https://fukuaka-pedia.github.io/accounts/日本結束主義評議会/" class="account-card">
-            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/CFG.png" alt="日本結束主義評議会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-            <div class="account-card__name">日本結束主義評議会</div>
-            <div class="account-card__username">@CFd_Giappone</div>
-          </a>
-          <a href="https://fukuaka-pedia.github.io/accounts/日本革命委員会/" class="account-card">
-            <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/RCJ.png" alt="日本革命委員会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
-            <div class="account-card__name">日本革命委員会</div>
-            <div class="account-card__username">@rcj_united</div>
-          </a>
-        </div>
-        <h2 class="home-section-title">関連情報</h2>
-        <div class="home-cards">
-          <a href="https://fukuaka-pedia.github.io/related/複垢/" class="account-card">
-            <div class="account-card__name">複垢</div>
-            <div class="account-card__username">関連情報</div>
-          </a>
-          <a href="https://fukuaka-pedia.github.io/related/複垢界隈/" class="account-card">
-            <div class="account-card__name">複垢界隈</div>
-            <div class="account-card__username">関連情報</div>
-          </a>
-        </div>
-        <h2 class="home-section-title">サイトについて</h2>
-        <div class="section-box">
-          <div class="section-box__title">ナビゲーション</div>
-          <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.3rem;">
-            <li><a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/history/">追加履歴</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/categories/">カテゴリ一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/pages/">ページ一覧</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/timeline/">年表</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/related/">関連情報</a></li>
-            <li><a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a></li>
-          </ul>
-        </div>
+    <nav class="site-header__nav">
+      <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
+      <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__section">
+        <div class="sidebar__heading">月間ランキング TOP5</div>
+        <ul class="sidebar__list" id="sidebarRanking">
+          <li>
+            <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/">
+              <span class="sidebar__rank-num gold">1</span>
+              <img class="sidebar__icon-sm" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/NHP.png" alt="日本鳩吹党" onerror="this.style.display='none'">
+              日本鳩吹党
+            </a>
+          </li>
+          <li>
+            <a href="https://fukuaka-pedia.github.io/related/複垢DM/">
+              <span class="sidebar__rank-num silver">2</span>
+              複垢DM
+            </a>
+          </li>
+          <li>
+            <a href="https://fukuaka-pedia.github.io/accounts/">
+              <span class="sidebar__rank-num bronze">3</span>
+              複垢一覧
+            </a>
+          </li>
+          <li>
+            <a href="https://fukuaka-pedia.github.io/timeline/">
+              <span class="sidebar__rank-num">4</span>
+              年表
+            </a>
+          </li>
+          <li>
+            <a href="https://fukuaka-pedia.github.io/categories/">
+              <span class="sidebar__rank-num">5</span>
+              カテゴリ一覧
+            </a>
+          </li>
+        </ul>
       </div>
-    </section>
-  </main>
-</div>
-<script>
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxN_rzuyWyD3VfH3_nHK3QaDq8znD25Ei45fYXKeHbc-t01gKQXx9j0kQxhe8h0ts_9hw/exec';
-
-/* ======================================================
-   ページ切替（デモ用 SPA モード）
-   実際の各ページに分割した際は不要
-   ====================================================== */
-function showPage(pageId) {
-  document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
-  const target = document.getElementById(pageId);
-  if (target) target.classList.remove('hidden');
-}
-
-/* ページ自動判定（実際の個別ページに分割後は削除） */
-(function() {
-  const path = window.location.hash || '#home';
-  const map = {
-    '#home': 'page-home',
-    '#history': 'page-history',
-    '#ranking': 'page-ranking',
-    '#accounts': 'page-accounts',
-    '#account-hatobuki': 'page-account-hatobuki',
-    '#account-hatobuki-contact': 'page-account-hatobuki-contact',
-    '#account-hatobuki-comment': 'page-account-hatobuki-comment',
-    '#contact': 'page-contact',
-    '#categories': 'page-categories',
-    '#pages': 'page-pages',
-    '#timeline': 'page-timeline',
-    '#related': 'page-related',
-    '#related-fukuakadm': 'page-related-fukuakadm',
-    '#related-fukuakadm-contact': 'page-related-fukuakadm-contact',
-    '#related-fukuakadm-comment': 'page-related-fukuakadm-comment',
-  };
-  const target = map[path] || 'page-home';
-  showPage(target);
-  window.addEventListener('hashchange', () => {
-    const p = map[window.location.hash] || 'page-home';
-    showPage(p);
-  });
-})();
-
-/* ======================================================
-   検索
-   ====================================================== */
-function doSearch() {
-  const q = document.getElementById('globalSearch').value.trim();
-  if (!q) return;
-  // 実際の実装：GAS/静的JSONから検索
-  alert('検索: ' + q + '\n（実装時はGASまたは静的JSONを使用してください）');
-}
-document.getElementById('globalSearch').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch();
-});
-
-/* ======================================================
-   ランキングタブ切替
-   ====================================================== */
-function switchRankTab(btn, panelId) {
-  document.querySelectorAll('.ranking-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.ranking-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(panelId).classList.add('active');
-}
-
-/* ======================================================
-   目次トグル
-   ====================================================== */
-function toggleToc(btn) {
-  const toc = btn.closest('.toc');
-  const list = toc.querySelector('.toc__list');
-  if (list.style.display === 'none') {
-    list.style.display = '';
-    btn.textContent = '非表示';
-  } else {
-    list.style.display = 'none';
-    btn.textContent = '表示';
-  }
-}
-
-/* ======================================================
-   お気に入り
-   ====================================================== */
-function getFavorites() {
-  try { return JSON.parse(localStorage.getItem('fp_favorites') || '{}'); } catch(e) { return {}; }
-}
-function saveFavorites(favs) {
-  localStorage.setItem('fp_favorites', JSON.stringify(favs));
-}
-
-function toggleFavorite(id, name, url, btn) {
-  const favs = getFavorites();
-  if (favs[id]) {
-    delete favs[id];
-    btn.classList.remove('active');
-    btn.querySelector('.star').textContent = '☆';
-  } else {
-    favs[id] = { name, url };
-    btn.classList.add('active');
-    btn.querySelector('.star').textContent = '★';
-  }
-  saveFavorites(favs);
-  renderSidebarFavorites();
-}
-
-function renderSidebarFavorites() {
-  const favs = getFavorites();
-  const list = document.getElementById('sidebarFavorites');
-  const empty = document.getElementById('favEmptyMsg');
-  const keys = Object.keys(favs);
-  // Remove old items except empty msg
-  Array.from(list.children).forEach(c => { if (c !== empty) c.remove(); });
-  if (keys.length === 0) {
-    empty.style.display = '';
-  } else {
-    empty.style.display = 'none';
-    keys.forEach(id => {
-      const fav = favs[id];
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${fav.url}"><span class="sidebar__rank-num">★</span>${fav.name}</a>`;
-      list.appendChild(li);
-    });
-  }
-  // 各ボタンの状態も更新
-  document.querySelectorAll('.btn-favorite').forEach(btn => {
-    const btnId = btn.id.replace('favBtn-', '');
-    if (favs[btnId]) {
-      btn.classList.add('active');
-      btn.querySelector('.star').textContent = '★';
-    } else {
-      btn.classList.remove('active');
-      btn.querySelector('.star').textContent = '☆';
-    }
-  });
-}
-
-// ページ読み込み時にお気に入りを反映
-renderSidebarFavorites();
-
-/* ======================================================
-   フォーム送信（GAS連携）
-   ====================================================== */
-async function submitToGAS(data) {
-  try {
-    const res = await fetch(GAS_ENDPOINT, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    return true;
-  } catch(e) {
-    console.error('GAS submission error:', e);
-    return false;
-  }
-}
-
-function getFormData(formId) {
-  const form = document.getElementById(formId);
-  const data = {};
-  Array.from(form.elements).forEach(el => {
-    if (el.name) data[el.name] = el.value;
-  });
-  return data;
-}
-
-async function submitInfoContact(formId) {
-  const data = getFormData(formId);
-  data.type = 'info_contact';
-  data.timestamp = new Date().toISOString();
-
-  if (!data.contact_twitter && !data.contact_email) {
-    alert('Twitterユーザーネームまたはメールアドレスのいずれかを入力してください。');
-    return;
-  }
-
-  const btn = document.querySelector(`#${formId} button[type="button"]`);
-  btn.disabled = true;
-  btn.textContent = '送信中…';
-
-  await submitToGAS(data);
-  btn.textContent = '送信する';
-  btn.disabled = false;
-
-  // 成功表示（no-corsなので実際の成否は判断できない）
-  const successId = 'success' + formId.replace('contactForm','');
-  const successEl = document.getElementById(successId + 'Contact') || document.getElementById(successId);
-  if (successEl) successEl.style.display = 'block';
-}
-
-async function submitSiteContact() {
-  const data = getFormData('contactFormSite');
-  data.type = 'site_contact';
-  data.timestamp = new Date().toISOString();
-
-  if (!data.inquiry_type) { alert('問い合わせ種別を選択してください。'); return; }
-  if (!data.contact_twitter && !data.contact_email) {
-    alert('Twitterユーザーネームまたはメールアドレスのいずれかを入力してください。');
-    return;
-  }
-
-  const btn = document.querySelector('#contactFormSite button[type="button"]');
-  btn.disabled = true;
-  btn.textContent = '送信中…';
-
-  await submitToGAS(data);
-  btn.textContent = '送信する';
-  btn.disabled = false;
-
-  document.getElementById('successSiteContact').style.display = 'block';
-}
-
-async function submitComment(formId, listId) {
-  const data = getFormData(formId);
-  data.type = 'comment';
-  data.timestamp = new Date().toISOString();
-
-  if (!data.comment || !data.comment.trim()) { alert('コメントを入力してください。'); return; }
-
-  const btn = document.querySelector(`#${formId} button[type="button"]`);
-  btn.disabled = true;
-  btn.textContent = '送信中…';
-
-  await submitToGAS(data);
-  btn.textContent = 'コメントを投稿';
-  btn.disabled = false;
-
-  // UIに即時反映
-  const list = document.getElementById(listId);
-  const name = data.display_name || '匿名';
-  const now = new Date().toLocaleDateString('ja-JP');
-  const item = document.createElement('div');
-  item.className = 'comment-item';
-  item.innerHTML = `
-    <div class="comment-item__meta">
-      <span class="comment-item__author">${escHtml(name)}</span>
-      <span>${now}</span>
-    </div>
-    <div class="comment-item__body">${escHtml(data.comment)}</div>
-  `;
-  list.appendChild(item);
-
-  const successId = 'success' + formId.replace('commentForm','') + 'Comment';
-  const el = document.getElementById(successId);
-  if (el) el.style.display = 'block';
-
-  document.getElementById(formId).reset();
-}
-
-function escHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-/* ======================================================
-   アクセス数の記録と取得（GAS連携）
-   ====================================================== */
-async function recordPageView(pageSlug) {
-  try {
-    await fetch(GAS_ENDPOINT + '?action=pageview&page=' + encodeURIComponent(pageSlug), {
-      mode: 'no-cors'
-    });
-  } catch(e) {}
-}
-
-async function fetchPageStats(pageSlug, prefix) {
-  try {
-    const res = await fetch(GAS_ENDPOINT + '?action=stats&page=' + encodeURIComponent(pageSlug));
-    const data = await res.json();
-    ['total','year','month','week','day'].forEach(k => {
-      const el = document.getElementById(`stat-${prefix}-${k}`);
-      if (el && data[k] !== undefined) el.textContent = Number(data[k]).toLocaleString() + ' PV';
-    });
-  } catch(e) {}
-}
-
-// ページ読み込み時にアクセス記録（実際の個別ページでは適切なslugを指定）
-(function() {
-  const hash = window.location.hash;
-  if (hash === '#account-hatobuki') {
-    recordPageView('accounts/日本鳩吹党');
-    fetchPageStats('accounts/日本鳩吹党', 'hatobuki');
-  } else if (hash === '#related-fukuakadm') {
-    recordPageView('related/複垢DM');
-    fetchPageStats('related/複垢DM', 'fukuakadm');
-  }
-})();
-
-/* ======================================================
-   ランキングデータ取得（GAS連携）
-   ====================================================== */
-async function fetchRankingData() {
-  try {
-    const res = await fetch(GAS_ENDPOINT + '?action=ranking');
-    const data = await res.json();
-    // data: { total: [...], year: [...], month: [...], week: [...], day: [...] }
-    // 各パネルに反映する実装は省略（GAS実装後に追加）
-  } catch(e) {}
-}
-
-// ランキングページ表示時に取得
-if (window.location.hash === '#ranking') fetchRankingData();
-</script>
-
+      <div class="sidebar__section">
+        <div class="sidebar__heading">お気に入り</div>
+        <ul class="sidebar__list" id="sidebarFavorites">
+          <li id="favEmptyMsg" style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">お気に入りはまだありません</li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section id="page-home" class="page-section">
+        <div class="content-area">
+          <div class="page-header">
+            <h1 class="page-header__title">複垢界隈図鑑へようこそ</h1>
+            <p class="page-header__sub">Twitterの「複垢界隈」の情報を掲載する図鑑サイト</p>
+          </div>
+          <div class="home-intro">
+            <p>
+              <strong>複垢界隈図鑑</strong>（ふくあかかいわいずかん、英: <em>Fukuaka Pedia</em>）は、
+              Twitterで活動する「複垢」に関する情報を収集・整理した図鑑サイトです。
+            </p>
+            <p>
+              本サイトは有志によって運営されており、掲載情報は順次更新されます。
+              情報の誤りや追加すべき事項がある場合は、各ページの「情報提供」または
+              <a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a>よりご連絡ください。
+            </p>
+            <p>
+              複垢界隈とは、Twitterで複数人で運営・管理されるアカウントのコミュニティです。
+              政治的主張や情報発信など、様々な目的のもとで形成されています。
+            </p>
+          </div>
+          <div class="notice notice--info">
+            本サイトに掲載されている情報は記録目的のものです。特定の思想・立場を支持・批判するものではありません。
+          </div>
+          <h2 class="home-section-title">主な複垢</h2>
+          <div class="home-cards">
+            <a href="https://fukuaka-pedia.github.io/accounts/SLA@再建/" class="account-card">
+              <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/SLA@再建.png" alt="SLA@再建" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="account-card__name">SLA@再建</div>
+              <div class="account-card__username">@2ndSLA0817</div>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/accounts/啓蒙と非バイアス社会の同盟/" class="account-card">
+              <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/LENS.png" alt="啓蒙と非バイアス社会の同盟" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="account-card__name">啓蒙と非バイアス社会の同盟</div>
+              <div class="account-card__username">@LENS_Project26</div>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/accounts/日本結束主義評議会/" class="account-card">
+              <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/CFG.png" alt="日本結束主義評議会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="account-card__name">日本結束主義評議会</div>
+              <div class="account-card__username">@CFd_Giappone</div>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/accounts/日本革命委員会/" class="account-card">
+              <img class="account-card__icon" src="https://fukuaka-pedia.github.io/assets/img/fukuaka/RCJ.png" alt="日本革命委員会" onerror="this.src='https://fukuaka-pedia.github.io/assets/img/icon.png'">
+              <div class="account-card__name">日本革命委員会</div>
+              <div class="account-card__username">@rcj_united</div>
+            </a>
+          </div>
+          <h2 class="home-section-title">関連情報</h2>
+          <div class="home-cards">
+            <a href="https://fukuaka-pedia.github.io/related/複垢/" class="account-card">
+              <div class="account-card__name">複垢</div>
+              <div class="account-card__username">関連情報</div>
+            </a>
+            <a href="https://fukuaka-pedia.github.io/related/複垢界隈/" class="account-card">
+              <div class="account-card__name">複垢界隈</div>
+              <div class="account-card__username">関連情報</div>
+            </a>
+          </div>
+          <h2 class="home-section-title">サイトについて</h2>
+          <div class="section-box">
+            <div class="section-box__title">ナビゲーション</div>
+            <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.3rem;">
+              <li><a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/history/">追加履歴</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/categories/">カテゴリ一覧</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/pages/">ページ一覧</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/timeline/">年表</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/related/">関連情報</a></li>
+              <li><a href="https://fukuaka-pedia.github.io/contact/">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
