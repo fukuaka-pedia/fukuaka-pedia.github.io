@@ -1595,6 +1595,17 @@ img {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.86rem;
+  display: table;
+}
+
+.pages-table thead,
+.list-table thead {
+  display: table-header-group;
+}
+
+.pages-table tbody,
+.list-table tbody {
+  display: table-row-group;
 }
 
 .pages-table th,
@@ -1606,6 +1617,7 @@ img {
   text-align: left;
   position: static;
   top: var(--header-height);
+  display: table-cell;
 }
 
 .pages-table td,
@@ -1613,6 +1625,12 @@ img {
   padding: 0.4rem 0.7rem;
   border: 1px solid var(--color-border-light);
   vertical-align: middle;
+  display: table-cell;
+}
+
+.pages-table tr,
+.list-table tr {
+  display: table-row;
 }
 
 .pages-table tr:nth-child(even) td,
