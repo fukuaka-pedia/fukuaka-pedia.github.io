@@ -1,0 +1,59 @@
+    <section id="page-account-hatobuki-comment" class="page-section hidden">
+      <div class="content-area">
+        <nav class="breadcrumb">
+          <a href="https://fukuaka-pedia.github.io/">ホーム</a>
+          <span class="breadcrumb__sep">›</span>
+          <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
+          <span class="breadcrumb__sep">›</span>
+          <a href="https://fukuaka-pedia.github.io/accounts/日本鳩吹党/">日本鳩吹党</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>コメント</span>
+        </nav>
+        <div class="page-header">
+          <h1 class="page-header__title">コメント — 日本鳩吹党</h1>
+          <p class="page-header__sub">このページに関するディスカッション</p>
+        </div>
+
+        <div class="notice notice--warning">
+          ⚠️ コメントは公開されます。個人情報の記載や誹謗中傷はご遠慮ください。
+        </div>
+
+        <div class="comment-list" id="commentListHatobuki">
+          <!-- GASから取得して挿入 -->
+          <div class="comment-item">
+            <div class="comment-item__meta">
+              <span class="comment-item__author">匿名</span>
+              <span>2025-01-16</span>
+            </div>
+            <div class="comment-item__body">
+              日本鳩吹党の詳細な活動期間について知っている方がいれば教えてください。
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="section-box__title" style="margin-bottom:1rem;">コメントを投稿する</h2>
+          <form id="commentFormHatobuki">
+            <input type="hidden" name="page" value="accounts/日本鳩吹党">
+            <div class="form-group">
+              <label class="form-label">表示名<span class="form-optional">（任意・省略で「匿名」）</span></label>
+              <input type="text" name="display_name" class="form-control" placeholder="匿名">
+            </div>
+            <div class="form-group">
+              <label class="form-label">コメント<span class="form-required">*</span></label>
+              <textarea name="comment" class="form-control form-control--textarea" rows="5" placeholder="コメントを入力してください…" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Twitterユーザーネーム<span class="form-optional">（任意）</span></label>
+              <input type="text" name="twitter" class="form-control" placeholder="@yourusername">
+            </div>
+            <div class="form-submit">
+              <button type="button" class="btn btn--primary" onclick="submitComment('commentFormHatobuki','commentListHatobuki')">コメントを投稿</button>
+            </div>
+            <div class="form-success" id="successHatobukiComment">
+              ✅ コメントを投稿しました。
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
