@@ -1,4 +1,4 @@
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxN_rzuyWyD3VfH3_nHK3QaDq8znD25Ei45fYXKeHbc-t01gKQXx9j0kQxhe8h0ts_9hw/exec';
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZ9UbYXvVxtbjC4MRLCbA7MYs77UMeI639P95FM2RL8OJF4sWtbgx9OMRe4PpTt-6IZw/exec';
 const SEARCH_JSON  = 'https://fukuaka-pedia.github.io/assets/search.json';
 
 document.addEventListener('DOMContentLoaded', () => {
