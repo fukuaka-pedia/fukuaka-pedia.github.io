@@ -1632,6 +1632,7 @@ img {
   object-fit: cover;
   border: 1px solid var(--color-border);
   background: var(--color-bg-alt);
+  display: block;
 }
 
 @media (max-width: 900px) {
