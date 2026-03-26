@@ -1795,6 +1795,18 @@ img {
   border-color: var(--color-border);
 }
 
+.status-badge--has-page {
+  background: #e6eef8;
+  color: #2a5a8a;
+  border-color: #a8c4e0;
+}
+
+.status-badge--no-page {
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
 .account-card .status-badge,
 .account-list-item .status-badge {
   display: block;
