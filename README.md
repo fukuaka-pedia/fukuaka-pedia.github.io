@@ -40,6 +40,9 @@
 ## 略年表
 #contents-timeline
 
+## 構成
+#contents-composition
+
 ## 関連ページ
 #contents-related
 
