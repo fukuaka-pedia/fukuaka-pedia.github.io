@@ -38,10 +38,22 @@
     "status":   "",
     "summary":  "SLAなどの複垢で構成されるグループ。",
     "keywords": [
-      "SLA家",
-      "CFG家",
-      "YSL家",
+      "SLA",
+      "CFG",
+      "YSL",
       "家族"
+    ]
+  },
+  {
+    "name":     "個体",
+    "url":      "https://fukuaka-pedia.github.io/related/個体/",
+    "icon":     "icon.png",
+    "type":     "関連情報",
+    "status":   "",
+    "summary":  "複垢を構成するメンバーのこと。",
+    "keywords": [
+      "個体",
+      "複垢"
     ]
   },
   {
@@ -56,10 +68,15 @@
       "ダイレクトメッセージ",
       "複垢",
       "首長",
-      "再掲",
+      "JNU",
+      "再建",
       "家族",
+      "SLA",
       "政治",
+      "MCP",
       "ノスタルジア",
+      "NCC",
+      "西中島",
       "フロンティア"
     ]
   }
