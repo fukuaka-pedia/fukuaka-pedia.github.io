@@ -41,11 +41,29 @@ async function initSearchPage(containerId) {
     const data = await res.json();
     const lower = q.toLowerCase();
 
+    const querySubs = getSubstrings(lower, 2);
+
+    function getSubstrings(str, minLen) {
+      const subs = new Set();
+      for (let i = 0; i < str.length; i++) {
+        for (let j = i + minLen; j <= str.length; j++) {
+          subs.add(str.slice(i, j));
+        }
+      }
+      return subs;
+    }
+    
     const results = data.filter(item => {
       const haystack = [
         item.name, item.type, item.status, ...(item.keywords || [])
       ].join(' ').toLowerCase();
-      return haystack.includes(lower);
+    
+      if (haystack.includes(lower)) return true;
+    
+      for (const sub of querySubs) {
+        if (haystack.includes(sub)) return true;
+      }
+      return false;
     });
 
     if (results.length === 0) {
