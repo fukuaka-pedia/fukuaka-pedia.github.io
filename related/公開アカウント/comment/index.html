@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="作ったものを置いておく場所">
+  <meta property="og:title" content="複垢界隈図鑑">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="複垢界隈図鑑">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://fukuaka-pedia.github.io/assets/img/icon.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <title>公開アカウント - 複垢界隈図鑑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fukuaka-pedia.github.io/assets/style.css">
+  <link rel="icon" type="image/png" href="https://fukuaka-pedia.github.io/assets/img/icon.png">
+  <script src="https://fukuaka-pedia.github.io/assets/common.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="https://fukuaka-pedia.github.io/" class="site-header__brand">
+      <img src="https://fukuaka-pedia.github.io/assets/img/icon.png" alt="複垢界隈図鑑" class="site-header__logo">
+      <div>
+        <span class="site-header__title-ja">複垢界隈図鑑</span>
+        <span class="site-header__title-en">Fukuaka Pedia</span>
+      </div>
+    </a>
+    <div class="site-header__search">
+      <input type="text" id="globalSearch" placeholder="記事を検索…" autocomplete="off">
+      <button onclick="doSearch()">検索</button>
+    </div>
+    <nav class="site-header__nav">
+      <a href="https://fukuaka-pedia.github.io/accounts/">複垢一覧</a>
+      <a href="https://fukuaka-pedia.github.io/ranking/">アクセスランキング</a>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__section">
+        <div class="sidebar__heading">月間ランキング TOP5</div>
+          <ul class="sidebar__list" id="sidebarRanking">
+          <li style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">読み込み中…</li>
+        </ul>
+      </div>
+      <div class="sidebar__section">
+        <div class="sidebar__heading">お気に入り</div>
+        <ul class="sidebar__list" id="sidebarFavorites">
+          <li id="favEmptyMsg" style="padding:0.3rem 0.4rem;font-size:0.8rem;color:var(--color-text-muted);">お気に入りはまだありません</li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main-content">
+        <section id="page-related-contents-comment" class="page-section">
+          <div class="content-area">
+            <nav class="breadcrumb">
+            <a href="https://fukuaka-pedia.github.io/">ホーム</a>
+            <span class="breadcrumb__sep">›</span>
+            <a href="https://fukuaka-pedia.github.io/related/">関連情報</a>
+            <span class="breadcrumb__sep">›</span>
+            <a href="https://fukuaka-pedia.github.io/related/公開アカウント/">公開アカウント</a>
+            <span class="breadcrumb__sep">›</span>
+            <span>コメント</span>
+          </nav>
+          <div class="page-header">
+            <h1 class="page-header__title">コメント - 公開アカウント</h1>
+            <p class="page-header__sub">このページに関するディスカッション</p>
+          </div>
+          <div class="notice notice--warning">
+            コメントは公開されます。個人情報の記載や誹謗中傷はご遠慮ください。
+          </div>
+          <div class="comment-list" id="commentListcontents">
+          </div>
+          <div class="form-card">
+            <h2 class="section-box__title" style="margin-bottom:1rem;">コメントを投稿する</h2>
+            <form id="commentFormcontents">
+              <input type="hidden" name="page" value="related/公開アカウント">
+              <div class="form-group">
+                <label class="form-label">表示名<span class="form-optional">（任意・省略で「匿名」）</span></label>
+                <input type="text" name="display_name" class="form-control" placeholder="匿名">
+              </div>
+              <div class="form-group">
+                <label class="form-label">コメント<span class="form-required">*</span></label>
+                <textarea name="comment" class="form-control form-control--textarea" rows="5" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Twitterユーザーネーム<span class="form-optional">（任意）</span></label>
+                <input type="text" name="twitter" class="form-control" placeholder="@yourusername">
+              </div>
+              <div class="form-submit">
+                <button type="button" class="btn btn--primary" onclick="submitComment('commentFormcontents','commentListcontents')">コメントを投稿</button>
+              </div>
+              <div class="form-success" id="successcontentsComment">
+                コメントを投稿しました。
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
