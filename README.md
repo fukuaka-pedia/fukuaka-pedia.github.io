@@ -37,6 +37,15 @@
 ### 活動終了
 #contents-activity-end
 
+## 関係者
+#contents-stakeholders
+
+### 被害者
+#contents-stakeholders-victim
+
+### 加害者
+#contents-stakeholders-perpetrator
+
 ## 略年表
 #contents-timeline
 
@@ -70,7 +79,7 @@
 **設置位置：class:page-stats の上**
 
 <div class="notice notice--stub">
-このページは書きかけです。情報提供にご協力ください。
+  このページは書きかけです。情報提供にご協力ください。
 </div>
 
 ---
@@ -78,14 +87,14 @@
 ## 【toc__list参考例】
 
 <ol class="toc__list" id="toc-contents">
-<li><a href="#contents-overview">1. 概要</a></li>
-<li><a href="#contents-activity">2. 活動</a>
-<ol class="toc__list--sub">
-<li><a href="#contents-activity-begin">2.1 活動開始</a></li>
-<li><a href="#contents-activity-end">2.2 活動終了</a></li>
-</ol>
-</li>
-<li><a href="#contents-timeline">3. 略年表</a></li>
-<li><a href="#contents-related">4. 関連ページ</a></li>
-<li><a href="#contents-external">5. 外部リンク</a></li>
+  <li><a href="#contents-overview">1. 概要</a></li>
+  <li><a href="#contents-activity">2. 活動</a>
+  <ol class="toc__list--sub">
+    <li><a href="#contents-activity-begin">2.1 活動開始</a></li>
+    <li><a href="#contents-activity-end">2.2 活動終了</a></li>
+  </ol>
+  </li>
+  <li><a href="#contents-timeline">3. 略年表</a></li>
+  <li><a href="#contents-related">4. 関連ページ</a></li>
+  <li><a href="#contents-external">5. 外部リンク</a></li>
 </ol>
